@@ -1,0 +1,3 @@
+stun.l.google.com
+plex.tv
+app.plex.tv

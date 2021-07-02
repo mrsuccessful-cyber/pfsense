@@ -1,0 +1,82 @@
+192.168.2.254	1c:c6:3c:5b:1b:91		tv		n/a	n/a	offline	static	  
+192.168.2.121	34:02:86:06:e3:5c		LAPTOP		n/a	n/a	offline	static	  
+192.168.2.120	68:5a:cf:aa:d9:32		Marjan-A8		n/a	n/a	online	static	 
+192.168.2.115	00:21:91:57:68:dd		KIDS-PC		n/a	n/a	offline	static	  
+192.168.2.114	20:39:56:77:4f:f9		bardiaphone		n/a	n/a	online	static	 
+192.168.2.103	d4:3d:7e:9e:03:e1		Marjan-PC		n/a	n/a	offline	static	  
+192.168.2.101	28:16:7f:26:f6:0f		Mi9T		n/a	n/a	online	static	 
+192.168.2.100	30:9c:23:06:39:12		RAKHSH		n/a	n/a	online	static	 
+192.168.2.11	f0:ef:86:a2:e5:c6		Google-Nest-Mini		n/a	n/a	online	static	 
+192.168.2.10	00:15:5d:02:64:01		hyperv		n/a	n/a	online	static	 
+192.168.2.9	18:3a:2d:f7:54:24		Tablet		n/a	n/a	offline	static	  
+192.168.2.8	7c:49:eb:93:5a:c2		migateway		n/a	n/a	online	static	 
+192.168.2.7	60:45:bd:95:99:6e		xbox		n/a	n/a	offline	static	  
+192.168.2.6	8c:5a:f8:eb:9f:bb		mibox		n/a	n/a	online	static	 
+192.168.2.5	b4:a3:82:c9:38:1e		DVR		n/a	n/a	online	static	 
+192.168.2.4	18:e8:29:69:1e:ce		Unifi		n/a	n/a	online	static	 
+192.168.2.3	c0:4a:00:f3:3a:d8		tplink		n/a	n/a	offline	static	  
+192.168.2.2	00:15:5d:02:64:00		pi-hole		n/a	n/a	online	static	 
+Leases in Use
+
+https://raw.githubusercontent.com/cheshmghermezi/pfsense-lists/master/iran-full-ip-list.txt
+
+
+
+
+https://pgl.yoyo.org/adservers/iplist.php
+
+
+yadsl 192.168.168.1
+wadsl 192.168.192.1
+
+Connecting to Norway #142 (no142.nordvpn.com)
+You are connected to Norway #142 (no142.nordvpn.com)!
+root@RAKHSH:/home/amir# ifconfig nordlynx
+nordlynx: flags=209<UP,POINTOPOINT,RUNNING,NOARP>  mtu 1420
+        inet 10.5.0.2  netmask 255.255.255.255  destination 10.5.0.2
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 1000  (UNSPEC)
+        RX packets 37  bytes 14612 (14.6 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 44  bytes 6964 (6.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@RAKHSH:/home/amir# wg showconf nordlynx
+[Interface]
+ListenPort = 52954
+PrivateKey = INnQU5Y3/hfJ3hvahEShsbmXoywVce4clv3L+sXubko=
+
+[Peer]
+PublicKey = 24IO9X6HN0Rx/KLpFpcZHjcI2bJ6Z6JWJ+ZShKjTZkU=
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = 37.120.203.171:51820
+PersistentKeepalive = 25
+root@RAKHSH:/home/amir# wg show
+interface: nordlynx
+  public key: BTma3e01yIhjE8vxK412YCPk3HHjOw4wL7IPnTAh+2U=
+  private key: (hidden)
+  listening port: 52954
+
+peer: 24IO9X6HN0Rx/KLpFpcZHjcI2bJ6Z6JWJ+ZShKjTZkU=
+  endpoint: 37.120.203.171:51820
+  allowed ips: 0.0.0.0/0, ::/0
+  latest handshake: 49 seconds ago
+  transfer: 14.30 KiB received, 6.83 KiB sent
+  persistent keepalive: every 25 seconds
+root@RAKHSH:/home/amir# ifconfig nordlynx
+nordlynx: flags=209<UP,POINTOPOINT,RUNNING,NOARP>  mtu 1420
+        inet 10.5.0.2  netmask 255.255.255.255  destination 10.5.0.2
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 1000  (UNSPEC)
+        RX packets 3  bytes 276 (276.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 20  bytes 988 (988.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@RAKHSH:/home/amir# curl ifconfig.me
+37.120.203.172root@RAKHSH:/home/amir# wg show nordlynx private-key
+INnQU5Y3/hfJ3hvahEShsbmXoywVce4clv3L+sXubko=
+root@RAKHSH:/home/amir# ip address show nordlynx
+33: nordlynx: <POINTOPOINT,NOARP,UP,LOWER_UP> mtu 1420 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/none
+    inet 10.5.0.2/32 scope global nordlynx
+       valid_lft forever preferred_lft forever
+root@RAKHSH:/home/amir#
