@@ -1,9 +1,6 @@
-stun.l.google.com
-plex.tv
 www.gstatic.com
 tomato-timer.com
 pomofocus.io
-app.plex.tv
 watson.telemetry.microsoft.com
 in.appcenter.ms
 appcenter.ms
